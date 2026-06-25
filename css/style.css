@@ -59,3 +59,31 @@ section a {
 section a:hover {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
 }
+
+.controles {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.contenedor-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.tarjeta {
+  flex: 1 1 200px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.tarjeta.resaltada {
+  background-color: #ffe9a8;
+  border: 2px solid #f1c40f;
+}

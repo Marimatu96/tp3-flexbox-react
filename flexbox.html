@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 1 - Flexbox</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Ejercicio 1: Flexbox</h1>
+    <nav>
+      <a href="index.html">Volver al inicio</a>
+    </nav>
+  </header>
+
+  <main>
+  <p>
+    Las tarjetas se generan dinámicamente con JavaScript a partir de un
+    arreglo de razas de perros. Se pueden ordenar alfabéticamente y
+    filtrar por tamaño.
+  </p>
+
+  <div class="controles">
+    <button id="btnOrdenar">Ordenar A-Z</button>
+
+    <label for="filtroTamano">Filtrar por tamaño:</label>
+    <select id="filtroTamano">
+      <option value="todos">Todos</option>
+      <option value="Pequeño">Pequeño</option>
+      <option value="Mediano">Mediano</option>
+      <option value="Grande">Grande</option>
+    </select>
+  </div>
+
+  <section id="contenedorTarjetas" class="contenedor-flex">
+    <!-- Las tarjetas se van a insertar acá con JavaScript -->
+  </section>
+</main>
+
+</body>
+</html>
