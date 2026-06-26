@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 2 - Personas</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Ejercicio 2: Formulario y tabla de personas</h1>
+    <nav>
+      <a href="index.html">Volver al inicio</a>
+    </nav>
+  </header>
+
+  <main>
+  <form id="formPersona" class="formulario">
+    <div class="campo">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" required>
+    </div>
+
+    <div class="campo">
+      <label for="apellido">Apellido</label>
+      <input type="text" id="apellido" required>
+    </div>
+
+    <div class="campo">
+      <label for="edad">Edad</label>
+      <input type="number" id="edad" min="0" required>
+    </div>
+
+    <div class="campo">
+      <label for="altura">Altura (cm)</label>
+      <input type="number" id="altura" min="1" required>
+    </div>
+
+    <div class="campo">
+      <label for="peso">Peso (kg)</label>
+      <input type="number" id="peso" min="1" required>
+    </div>
+
+    <button type="submit">Agregar persona</button>
+  </form>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Edad</th>
+        <th>Altura (cm)</th>
+        <th>Peso (kg)</th>
+        <th>IMC</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="cuerpoTabla">
+      <!-- Las filas de personas se insertan acá con JavaScript -->
+    </tbody>
+  </table>
+  </main>
+
+  <script src="js/personas.js"></script>
+</body>
+</html>
