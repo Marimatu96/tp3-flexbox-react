@@ -1,5 +1,3 @@
-console.log("El archivo flexbox.js se está ejecutando");
-
 const razas = [
   { nombre: "Labrador", tamano: "Grande", caracter: "Amigable y muy activo" },
   { nombre: "Caniche", tamano: "Pequeño", caracter: "Inteligente y enérgico" },
@@ -45,6 +43,41 @@ function renderizarTarjetas(lista) {
     contenedor.appendChild(tarjeta);
   }
 }
+
+let ordenAscendente = true;
+
+function obtenerListaFiltrada() {
+  const tamanoSeleccionado = filtroTamano.value;
+
+  if (tamanoSeleccionado === "todos") {
+    return razas;
+  }
+
+  return razas.filter(function (raza) {
+    return raza.tamano === tamanoSeleccionado;
+  });
+}
+
+btnOrdenar.addEventListener("click", function () {
+  let lista = obtenerListaFiltrada().slice();
+
+  if (ordenAscendente) {
+    lista.sort(function (a, b) {
+      return a.nombre.localeCompare(b.nombre);
+    });
+  } else {
+    lista.sort(function (a, b) {
+      return b.nombre.localeCompare(a.nombre);
+    });
+  }
+
+  ordenAscendente = !ordenAscendente;
+  renderizarTarjetas(lista);
+});
+
+filtroTamano.addEventListener("change", function () {
+  renderizarTarjetas(obtenerListaFiltrada());
+});
 
 renderizarTarjetas(razas);
 
