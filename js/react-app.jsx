@@ -15,10 +15,11 @@ function FormularioPersona({ onAgregar }) {
     evento.preventDefault();
 
     if (
-      nombre.trim() === "" ||
-      apellido.trim() === "" ||
-      Number(altura) <= 0 ||
-      Number(peso) <= 0
+  nombre.trim() === "" ||
+  apellido.trim() === "" ||
+  Number(edad) <= 0 || Number(edad) > 120 ||
+  Number(altura) <= 0 || Number(altura) > 270 ||
+  Number(peso) <= 0 || Number(peso) > 700   
     ) {
       alert("Completá todos los campos correctamente.");
       return;
@@ -56,17 +57,17 @@ function FormularioPersona({ onAgregar }) {
 
       <div className="campo">
         <label>Edad</label>
-        <input type="number" min="0" value={edad} onChange={(e) => setEdad(e.target.value)} />
+        <input type="number" min="0" max="120" value={edad} onChange={(e) => setEdad(e.target.value)} />
       </div>
 
       <div className="campo">
         <label>Altura (cm)</label>
-        <input type="number" min="1" value={altura} onChange={(e) => setAltura(e.target.value)} />
+        <input type="number" min="1" max="270" value={altura} onChange={(e) => setAltura(e.target.value)} />
       </div>
 
       <div className="campo">
         <label>Peso (kg)</label>
-        <input type="number" min="1" value={peso} onChange={(e) => setPeso(e.target.value)} />
+        <input type="number" min="1" max="700" value={peso} onChange={(e) => setPeso(e.target.value)} />
       </div>
 
       <button type="submit">Agregar persona</button>

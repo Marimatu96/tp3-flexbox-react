@@ -48,7 +48,13 @@ formPersona.addEventListener("submit", function (evento) {
   const altura = Number(document.getElementById("altura").value);
   const peso = Number(document.getElementById("peso").value);
 
-  if (nombre === "" || apellido === "" || altura <= 0 || peso <= 0) {
+  if (
+  nombre === "" ||
+  apellido === "" ||
+  edad <= 0 || edad > 120 ||
+  altura <= 0 || altura > 270 ||
+  peso <= 0 || peso > 700
+) {
     alert("Completá todos los campos correctamente.");
     return;
   }
